@@ -1,4 +1,136 @@
+@font-face {
+  font-family: "Poppins", sans-serif;
+  src: url('../fonts/Poppins/Poppins-Thin.ttf');
+}
 
+:root {
+  /* Colors */
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+
+  /* Neutral */
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+
+  /* Typography Body paragraph */
+  --Font-size: 15px;
+
+  /* Font */
+  --font-family: "Poppins", sans-serif;
+  --Weight-200: 200;
+  --Weight-400: 400;
+  --Weight-600: 600;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--Very-Light-Gray);
+  font-family: var(--font-family);
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  line-height: 1rem;
+}
+
+h1.header__title {
+  color: var(--Grayish-Blue);
+  font-size: 1.4rem;
+}
+
+h2.header__subtitle {
+  color: var(--Very-Dark-Blue);
+}
+
+p.header__description {
+  font-weight: var(--Weight-400);
+  color: var(--Grayish-Blue);
+  font-size: 12px;
+  padding-bottom: 30px;
+  width: 24rem;
+}
+
+section.card {
+  background-color: var(--Very-Light-Gray);
+  text-align: left;
+  width: 18rem;
+  height: auto;
+  border-radius: 5px;
+  border: 2px solid var(--Very-Light-Gray);
+  padding: 0 20px 20px 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.main {
+  display: grid;
+  grid-template-areas:
+    'supervisor team-builder calculator'
+    'supervisor karma calculator';
+  gap: 20px;
+  padding: 40px;
+  align-items: center;
+}
+
+h2.card__title {
+  text-align: left;
+  color: var(--Very-Dark-Blue);
+  font-size: var(--Font-size);
+}
+
+p.card__description {
+  font-size: 14px;
+  padding-bottom: 20px;
+  color: var(--Grayish-Blue);
+}
+
+section.card img {
+  float: right;
+  height: 3rem;
+  padding-bottom: 10px;
+}
+
+#card__supervisor {
+  grid-area: supervisor;
+  border-top: 4px solid var(--Cyan);
+  justify-self: start;
+  align-self: center;
+}
+
+#card__team-builder {
+  grid-area: team-builder;
+  border-top: 4px solid var(--Red);
+  justify-self: center;
+}
+
+#card__calculator {
+  grid-area: calculator;
+  border-top: 4px solid var(--Blue);
+  justify-self: end;
+  align-self: center;
+}
+
+#card__karma {
+  grid-area: karma;
+  border-top: 4px solid var(--Orange);
+  justify-self: center;
+}
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
